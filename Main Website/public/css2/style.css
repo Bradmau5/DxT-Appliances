@@ -1,0 +1,298 @@
+body {
+    font-family: 'Hind Siliguri', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    background: url("./images/bg.png") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+.logo-bg {
+	width: 100%;
+	height: 100px;
+	background-color: transparent;
+	background-repeat: repeat-x;
+	margin: -10px 0px 10px -10px;
+	background-position: fixed;
+}
+.main-nav-scrolled {
+    position: fixed;
+    top: 0;
+    margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.top-logo {
+    background-color: #FFF;
+    color: #000;
+    margin: 10px 10px 10px 10px;
+    font-size: 30px;
+    padding: 0px 0 15px;
+    height: 30px;
+}
+
+.top-logo > strong{
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.pull-left {
+	float: left;
+}
+
+.container {
+    max-width: 960px;
+    border: 3px solid #000;
+    padding: 20px;
+    background-color: #999;
+    margin: 30px 0 30px 0;
+}
+.container a {
+    color: #000;
+}
+.container table {
+    font-size: 11px;
+    margin-top: 20px;
+}
+.container table thead td {
+    background-color: #000;
+    padding: 4px 10px;
+    color: #fff;
+}
+.container table tbody td {
+    padding: 4px 10px;
+}
+.container .box {
+    border-top: 1px solid #000;
+    padding-top: 10px;
+    margin-top: 30px;
+}
+.container input {
+    background-color: #000;
+    color: #fff;
+    border: 0;
+    padding: 5px 10px;
+}
+.container input[type="submit"] {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+.container input[type="submit"]:hover {
+    background-color: #fff;
+    color: #000;
+}
+.container button {
+    background-color: #000;
+    border: 0;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.container button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+
+
+/* navigation dropdown menu */
+.navigation, .navigation-submenu {
+    display: inline-block;
+    list-style: none;
+    /* btw this is necessary to remove most browsers's "hidden" default <ul> intent */
+    margin: 0;
+    padding: 0;
+}
+/* TODO */
+.navigation {
+	background-color: #000;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+
+}
+.navigation.right {
+    float: right;
+}
+.navigation li {
+    float: left;
+    margin-right: 5px;
+}
+.navigation .navigation-submenu {
+    display: none;
+}
+.navigation li a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid #000;
+    background: #000;
+    color: #fff;
+    float:none;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.navigation li:hover .navigation-submenu {
+    display: block;
+    position: absolute;
+    float: left;
+}
+.navigation li:hover li,
+.navigation li:hover a {
+    float: none;
+}
+.navigation li a:hover,
+.navigation li:hover li a:hover {
+    background: #fff;
+    color: #000000;
+}
+
+.navigation > li.active a {
+    background: #fff;
+    color: #000;
+}
+.navigation > li.active li a {
+    background: #000;
+    color: #fff;
+}
+
+/* overview */
+.overview-table img {
+    width: 40px;
+    height: 40px;
+}
+
+/* feedback boxes */
+.feedback {
+    padding: 30px;
+    margin-bottom: 10px;
+}
+.feedback.success {
+    color: #558f2d;
+    background-color: #ddf2c0;
+}
+.feedback.error {
+    color: #ff7272;
+    background-color: #ffe5e5;
+}
+.feedback.info {
+    color: #00529B;
+    background-color: #BDE5F8;
+}
+
+.header_right_box {
+    float: right;
+}
+
+/* login screen */
+.login-page-box {
+    display: table;
+    width: 100%;
+}
+.login-page-box .table-wrapper {
+    display: table-row;
+}
+
+.login-box {
+    display: table-cell;
+    margin: 0;
+    color: #000;
+    background-color: #999;
+    padding: 20px 50px 45px 50px;
+    width: 49%;
+    box-sizing: border-box;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.login-box h2 {
+    color: #FFF;
+}
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    font-family: 'Hind Siliguri', Arial, sans-serif;
+    color: #fff;
+    background-color: #000;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box; /* modern way to say width:100% without padding */
+    /*text-transform: uppercase;*/
+}
+.login-box input[type="submit"] {
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #000;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box; /* modern way to say width:100% without padding */
+    text-transform: uppercase;
+}
+.login-box input[type="submit"]:hover {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+}
+.login-box .remember-me-label {
+    display: block;
+    margin-bottom: 10px;
+}
+.login-box .link-forgot-my-password {
+    display: block;
+    text-align: right;
+}
+.login-box .link-forgot-my-password a {
+    color: #FFF;
+    text-decoration: none;
+}
+.login-box .link-forgot-my-password a:hover {
+    text-decoration: underline;
+}
+.login-box ::-webkit-input-placeholder { color: #777; opacity: 0.5; }
+.login-box ::-moz-placeholder { color: #777; opacity: 0.5; }
+.login-box :-ms-input-placeholder { color: #777; opacity: 0.5; }
+.login-box input:-moz-placeholder { color: #777; opacity: 0.5; }
+
+.register-box {
+    display: table-cell;
+    color: #fff;
+    background-color: #000;
+    padding: 20px 50px 45px 50px;
+    width: 49%;
+    box-sizing: border-box;
+    font-weight: 400;
+    margin: 0;
+    text-transform: uppercase;
+}
+.register-box h2 {
+    color: #fff;
+}
+.register-box a {
+    width: 100%;
+    display: block;
+    box-sizing: border-box; /* modern way to say width:100% without padding */
+    background-color: transparent;
+    border: 2px solid #fff;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+}
+.register-box a:hover {
+    background-color: #ffffff;
+    color: #252525;
+}
+
+/* error page */
+.red-text {
+    color: red;
+}
