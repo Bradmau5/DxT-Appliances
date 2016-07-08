@@ -62,7 +62,7 @@
                     <li>
                         <a href="<?php echo Config::get('URL'); ?>index/services">Services</a>
                     </li>
-                    <li>   
+                    <li>
                         <a href="https://www.yell.com/biz/dxt-appliances-ltd-london-7238090/#reviews">Reviews</a>
                     <li>
                         <a href="<?php echo Config::get('URL'); ?>index/about">About</a>
@@ -70,6 +70,12 @@
                     <li>
                         <a href="<?php echo Config::get('URL'); ?>index/contact">Contact</a>
                     </li>
+                    <?php if(!Session::userIsLoggedIn()) { ?>
+                        <!-- for not logged in users -->
+                        <li <?php if (View::checkForActiveControllerAndAction($filename, "login/index")) { echo ' class="active" '; } ?> >
+                            <a href="<?php echo Config::get('URL'); ?>login/index">Login</a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
