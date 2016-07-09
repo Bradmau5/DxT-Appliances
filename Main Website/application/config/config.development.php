@@ -65,9 +65,9 @@ return array(
 	 */
 	'DB_TYPE' => 'mysql',
 	'DB_HOST' => 'server.ss-web.co.uk',
-	'DB_NAME' => 'c2DXT_main',
-	'DB_USER' => 'c2dxt',
-	'DB_PASS' => 'dxtaccess',
+	'DB_NAME' => 'c1prtotpe',
+	'DB_USER' => 'c1prtotpe',
+	'DB_PASS' => 'wrkURlR!30',
 	'DB_PORT' => '3306',
 	'DB_CHARSET' => 'utf8',
 	/**
