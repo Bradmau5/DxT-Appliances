@@ -22,9 +22,10 @@ class RegistrationModel
 		$user_email = strip_tags(Request::post('user_email'));
 		$user_password_new = Request::post('user_password_new');
 		$user_password_repeat = Request::post('user_password_repeat');
+		$user_phone_number = strip_tags(Request::post('user_phone_number'));
 
 		// stop registration flow if registrationInputValidation() returns false (= anything breaks the input check rules)
-		$validation_result = RegistrationModel::registrationInputValidation(Request::post('captcha'), $user_name, $user_password_new, $user_password_repeat, $user_email);
+		$validation_result = RegistrationModel::registrationInputValidation(Request::post('captcha'), $user_name, $user_password_new, $user_password_repeat, $user_email, $user_phone_number);
 		if (!$validation_result) {
 			return false;
 		}
@@ -49,7 +50,7 @@ class RegistrationModel
 		$user_activation_hash = sha1(uniqid(mt_rand(), true));
 
 		// write user data to database
-		if (!RegistrationModel::writeNewUserToDatabase($user_name, $user_password_hash, $user_email, time(), $user_activation_hash)) {
+		if (!RegistrationModel::writeNewUserToDatabase($user_name, $user_password_hash, $user_email, time(), $user_activation_hash, $user_phone_number)) {
 			Session::add('feedback_negative', Text::get('FEEDBACK_ACCOUNT_CREATION_FAILED'));
 		}
 
@@ -84,7 +85,7 @@ class RegistrationModel
 	 *
 	 * @return bool
 	 */
-	public static function registrationInputValidation($captcha, $user_name, $user_password_new, $user_password_repeat, $user_email)
+	public static function registrationInputValidation($captcha, $user_name, $user_password_new, $user_password_repeat, $user_email, $user_phone_number)
 	{
 		// perform all necessary checks
 		if (!CaptchaModel::checkCaptcha($captcha)) {
@@ -93,7 +94,7 @@ class RegistrationModel
 		}
 
         // if username, email and password are all correctly validated
-        if (self::validateUserName($user_name) AND self::validateUserEmail($user_email) AND self::validateUserPassword($user_password_new, $user_password_repeat)) {
+        if (self::validateUserName($user_name) AND self::validateUserEmail($user_email) AND self::validateUserPassword($user_password_new, $user_password_repeat) AND self::validateUserPhoneNumber($user_phone_number)) {
             return true;
         }
 
@@ -117,6 +118,28 @@ class RegistrationModel
         // if username is too short (2), too long (64) or does not fit the pattern (aZ09)
         if (!preg_match('/^[a-zA-Z0-9]{2,64}$/', $user_name)) {
             Session::add('feedback_negative', Text::get('FEEDBACK_USERNAME_DOES_NOT_FIT_PATTERN'));
+            return false;
+        }
+
+        return true;
+    }
+
+		/**
+     * Validates the phone number
+     *
+     * @param $user_name
+     * @return bool
+     */
+    public static function validateUserPhoneNumber($user_phone_number)
+    {
+        if (empty($user_phone_number)) {
+            Session::add('feedback_negative', Text::get('FEEDBACK_USERNUMBER_FIELD_EMPTY'));
+            return false;
+        }
+
+        // if username is too short (2), too long (64) or does not fit the pattern (aZ09)
+        if (!preg_match('/^[0-9]{9,14}$/', $user_phone_number)) {
+            Session::add('feedback_negative', Text::get('FEEDBACK_USERNUMBER_DOES_NOT_FIT_PATTERN'));
             return false;
         }
 
@@ -185,20 +208,21 @@ class RegistrationModel
 	 *
 	 * @return bool
 	 */
-	public static function writeNewUserToDatabase($user_name, $user_password_hash, $user_email, $user_creation_timestamp, $user_activation_hash)
+	public static function writeNewUserToDatabase($user_name, $user_password_hash, $user_email, $user_creation_timestamp, $user_activation_hash, $user_phone_number)
 	{
 		$database = DatabaseFactory::getFactory()->getConnection();
 
 		// write new users data into database
-		$sql = "INSERT INTO users (user_name, user_password_hash, user_email, user_creation_timestamp, user_activation_hash, user_provider_type)
-                    VALUES (:user_name, :user_password_hash, :user_email, :user_creation_timestamp, :user_activation_hash, :user_provider_type)";
+		$sql = "INSERT INTO users (user_name, user_password_hash, user_email, user_creation_timestamp, user_activation_hash, user_provider_type, user_phone_number)
+                    VALUES (:user_name, :user_password_hash, :user_email, :user_creation_timestamp, :user_activation_hash, :user_provider_type, :user_phone_number)";
 		$query = $database->prepare($sql);
 		$query->execute(array(':user_name' => $user_name,
 		                      ':user_password_hash' => $user_password_hash,
 		                      ':user_email' => $user_email,
 		                      ':user_creation_timestamp' => $user_creation_timestamp,
 		                      ':user_activation_hash' => $user_activation_hash,
-		                      ':user_provider_type' => 'DEFAULT'));
+		                      ':user_provider_type' => 'DEFAULT',
+													':user_phone_number' => $user_phone_number));
 		$count =  $query->rowCount();
 		if ($count == 1) {
 			return true;

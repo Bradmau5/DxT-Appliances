@@ -14,6 +14,7 @@
 
     <!-- Custom CSS -->
     <link href="<?php echo Config::get('URL'); ?>css/business-casual.css" rel="stylesheet">
+    <link href="<?php echo Config::get('URL'); ?>css/style.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -73,7 +74,11 @@
                     <?php if(!Session::userIsLoggedIn()) { ?>
                         <!-- for not logged in users -->
                         <li <?php if (View::checkForActiveControllerAndAction($filename, "login/index")) { echo ' class="active" '; } ?> >
-                            <a href="<?php echo Config::get('URL'); ?>login/index">Login</a>
+                            <a href="<?php echo Config::get('URL'); ?>login/index">Login/Register</a>
+                        </li>
+                    <?php } else { ?>
+                        <li>
+                          Welcome <?php echo Session::user_name ?>
                         </li>
                     <?php } ?>
                 </ul>
