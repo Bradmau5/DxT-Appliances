@@ -1,34 +1,24 @@
 <div class="container">
 	<?php if (Session::userIsLoggedIn()) : ?>
-    <h1>LoginController/showProfile</h1>
+		<div class="row">
+    	<h1 class="h1big col-lg-12 col-md-12 col-sm-12 pull-left">Your Profile</h1>
+		</div>
 
     <div class="box">
-        <h2>Your profile</h2>
+      <div class="h2shaded">Here you can see everything on your account.</div>
 
-        <!-- echo out the system feedback (error and success messages) -->
-        <?php $this->renderFeedbackMessages(); ?>
-
-        <div>Your username: <?= $this->user_name; ?></div>
-        <div>Your email: <?= $this->user_email; ?></div>
-        <div>Your avatar image:
-            <?php if (Config::get('USE_GRAVATAR')) { ?>
-                Your gravatar pic (on gravatar.com): <img src='<?= $this->user_gravatar_image_url; ?>' />
-            <?php } else { ?>
-                Your avatar pic (saved locally): <img src='<?= $this->user_avatar_file; ?>' />
-            <?php } ?>
-        </div>
-        <div>Your account type is: <?php if($this->user_account_type == 3){
-			echo "Administrator";
-		}
-		else if($this->user_account_type == 2){
-			echo "Engineer";
-		}
-		else if($this->user_account_type == 1){
-			echo "Office Staff";
-		} else {
-			echo "Contract Customer";
-		}
-	 ?></div>
+      <!-- echo out the system feedback (error and success messages) -->
+      <?php $this->renderFeedbackMessages(); ?>
+			<div>
+				<img src='<?= $this->user_avatar_file; ?>' /><br />
+				<a style="text-align: center;" href="<?php echo Config::get('URL'); ?>login/editAvatar"> [Change] </a><br />
+			</div>
+      <div>Your username: <?= $this->user_name; ?></div>
+      <div>Your email: <?= $this->user_email; ?></div>
+			<br />
+    	<div><a href="#">View Previous Jobs</a></div>
+			<br />
+			<div><a href="<?php echo Config::get('URL'); ?>login/logout">Logout</a></div>
     </div>
 	<?php endif; ?>
 </div>

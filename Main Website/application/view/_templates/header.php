@@ -78,7 +78,7 @@
                         </li>
                     <?php } else { ?>
                         <li>
-                          Welcome <?php echo Session::user_name ?>
+                          <a href="<?php echo Config::get('URL'); ?>login/showProfile">Your Profile</a>
                         </li>
                     <?php } ?>
                 </ul>

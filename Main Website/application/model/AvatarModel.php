@@ -157,9 +157,13 @@ class AvatarModel
 	 *
 	 * @return bool success state
 	 */
-	public static function resizeAvatarImage($source_image, $destination, $final_width = 44, $final_height = 44, $quality = 85)
+	public static function resizeAvatarImage($source_image, $destination, $final_width, $final_height, $quality)
 	{
 		list($width, $height) = getimagesize($source_image);
+
+		$final_width = Config::get('AVATAR_SIZE');
+		$final_height = Config::get('AVATAR_SIZE');
+		$quality = Config::get('AVATAR_JPEG_QUALITY');
 
 		if (!$width || !$height) {
 			return false;

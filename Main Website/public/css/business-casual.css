@@ -7,10 +7,10 @@
 body {
     font-family: "Hind Siliguri", "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     /*background: url('../img/bg.jpg') no-repeat center center fixed;*/
-    background: -webkit-linear-gradient(rgba(68,66,66,1), rgba(255,255,255,1)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(rgba(96,95,95,1), rgba(255,255,255,1)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(rgba(96,95,95,1), rgba(255,255,255,1)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(rgba(96,95,95,1), rgba(255,255,255,1)); /* Standard syntax */
+    background: -webkit-linear-gradient(rgba(68,66,66,1), rgba(166, 166, 166,1)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(96,95,95,1), rgba(166, 166, 166,1)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(96,95,95,1), rgba(166, 166, 166,1)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(96,95,95,1), rgba(166, 166, 166,1)); /* Standard syntax */
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -152,7 +152,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.h2shaded {
     text-transform: uppercase;
     font-family: "Hind Siliguri", "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
@@ -171,7 +172,8 @@ hr {
 }
 
 .brand,
-.address-bar {
+.address-bar,
+.h2shaded {
     display: none;
 }
 
@@ -212,10 +214,9 @@ hr {
 }
 
 .box {
-    margin-bottom: 20px;
-    padding: 30px 15px;
-    background: #fff;
-    background: rgba(255,255,255,0.9);
+    margin-bottom: 15px;
+    padding: 15px 15px;
+    background: rgba(166, 166, 166,0.9);
 }
 
 .intro-text {
@@ -238,20 +239,19 @@ hr {
 }
 
 footer {
-    background: #fff;
-    background: rgba(255,255,255,0.9);
+    background: rgba(240, 240, 240,1);
 }
 
 footer p {
     margin: 0;
-    padding: 50px 0;
+    padding: 20px 0;
 }
 
 @media screen and (min-width:768px) {
     .brand {
         display: inherit;
         margin: 0;
-        padding: 30px 0 10px;
+        padding: 20px 0 10px;
         text-align: center;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         font-family: "Hind Siliguri", "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -259,6 +259,18 @@ footer p {
         font-weight: 700;
         line-height: normal;
         color: #fff;
+    }
+
+    .h1big{
+      display: inherit;
+      margin: 0;
+      padding: 10px 0 10px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+      font-family: "Hind Siliguri", "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-size: 2.5em;
+      font-weight: 550;
+      line-height: normal;
+      color: #fff;
     }
 
     #top_bar_content {
@@ -287,6 +299,19 @@ footer p {
         color: #fff;
     }
 
+    .h2shaded {
+      display: inherit;
+      margin: 0;
+      padding: 0 0 10px;
+      text-align: center;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+      text-transform: uppercase;
+      font-size: 1.45em;
+      font-weight: 450;
+      letter-spacing: 2px;
+      color: #fff;
+    }
+
     .navbar {
         border-radius: 0;
     }
@@ -301,12 +326,11 @@ footer p {
 
     .navbar-default {
         border: none;
-        background: #fff;
-        background: rgba(255,255,255,0.9);
+        background: rgba(240, 240, 240,1);
     }
 
     .nav>li>a {
-        padding: 35px;
+        padding: 25px;
     }
 
     .navbar-nav>li>a {

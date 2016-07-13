@@ -109,9 +109,9 @@ return array(
 	'USE_GRAVATAR' => false,
 	'GRAVATAR_DEFAULT_IMAGESET' => 'mm',
 	'GRAVATAR_RATING' => 'pg',
-	'AVATAR_SIZE' => 44,
+	'AVATAR_SIZE' => 77,
 	'AVATAR_JPEG_QUALITY' => 85,
-	'AVATAR_DEFAULT_IMAGE' => 'default.jpg',
+	'AVATAR_DEFAULT_IMAGE' => 'logo.png',
     /**
      * Configuration for: Encryption Keys
      *

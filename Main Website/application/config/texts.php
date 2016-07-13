@@ -15,6 +15,7 @@ return array(
 	"FEEDBACK_USERNAME_OR_PASSWORD_WRONG" => "The username or password is incorrect. Please try again.",
 	"FEEDBACK_USER_DOES_NOT_EXIST" => "This user does not exist.",
 	"FEEDBACK_LOGIN_FAILED" => "Login failed.",
+	"FEEDBACK_PASSWORD_WRONG" => "Incorrect password entered.",
 	"FEEDBACK_LOGIN_FAILED_3_TIMES" => "Login failed 3 or more times already. Please wait 30 seconds to try again.",
 	"FEEDBACK_USERNAME_FIELD_EMPTY" => "Username field was empty.",
 	"FEEDBACK_PASSWORD_FIELD_EMPTY" => "Password field was empty.",
@@ -72,5 +73,5 @@ return array(
 	"FEEDBACK_COOKIE_INVALID" => "Your remember-me-cookie is invalid.",
 	"FEEDBACK_COOKIE_LOGIN_SUCCESSFUL" => "You were successfully logged in via the remember-me-cookie.",
 	"CONTACT_POSITIVE" => "Your contact form was submitted successfully. You should receive a reply within 24 hours.",
-	"CONTACT_NEHGATIVE" => "Your contact form failed to submit. Please contact using the details provided."
+	"CONTACT_NEGATIVE" => "Your contact form failed to submit. Please contact using the details provided."
 );
