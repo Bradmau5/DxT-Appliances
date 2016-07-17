@@ -23,7 +23,7 @@ class LoginController extends Controller
     {
         // if user is logged in redirect to main-page, if not show the view
         if (LoginModel::isUserLoggedIn()) {
-            Redirect::home();
+            $this->View->render('login/showProfile');
         } else {
             $this->View->render('login/index');
         }
