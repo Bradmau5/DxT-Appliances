@@ -7,7 +7,7 @@
                     <h2 class="brand-before">
                         <small>Welcome to</small>
                     </h2>
-                    <h1 class="brand-name">DXT APPLIANCES</h1>
+                    <h1 class="brand-name">PRTOTPE SSWEB</h1>
                     <hr class="tagline-divider">
                     <h2>
                         <small>PROFESSIONAL

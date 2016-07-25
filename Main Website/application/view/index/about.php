@@ -5,7 +5,7 @@
                 <div class="col-lg-12">
                     <hr>
                     <h2 class="intro-text text-center">About
-                        <strong>dxt appliances</strong>
+                        <strong>prtotpe ssweb</strong>
                     </h2>
                     <hr>
                 </div>
@@ -30,7 +30,7 @@
 
                     <hr>
 
-                    <h2 class="intro-text text-center">Meet 
+                    <h2 class="intro-text text-center">Meet
 
                         <strong>Our Team</strong>
 

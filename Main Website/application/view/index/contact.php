@@ -16,14 +16,14 @@
                 </div>
                 <div class="col-md-4">
                     <p>Phone:
-                        <strong>020 8857 5821</strong>
+                        <strong>07712 234 134</strong>
                     </p>
                     <p>Email:
-                        <strong><a href="mailto:info@dxtappliances.co.uk">info@dxtappliances.co.uk</a></strong>
+                        <strong><a href="mailto:info@ss-web.co.uk">info@ss-web.co.uk</a></strong>
                     </p>
                     <p>Address:
-                        <strong>100 Mayeswood Road,
-                            <br>Grove Park, London, SE12 9RU</strong>
+                        <strong>Ravensbury Road,
+                            <br>Orpington, Kent, BR5</strong>
                     </p>
                 </div>
                 <div class="clearfix"></div>
