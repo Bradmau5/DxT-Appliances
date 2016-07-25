@@ -15,17 +15,17 @@
                                 <th hidden>Job ID</th> <th>Name</th> <th>Address</th> <th>Contact</th> <th>Date Booked</th> <th>Time</th> <th>Assign Job To?</th>
                             </tr>
                         </thead>
-                        <tbody>   
+                        <tbody>
                             <?php
                                 foreach($this->jobs as $key => $value){
-                                    if($value->job_for == '0'){
+                                    if($value->job_for == 'None'){
                                         echo '<tr>';
-                                        echo '<td hidden><input type="hidden" name="job_id[]" value="' . htmlentities($value->job_id) . '"/></td> <td>' . 
-                                        htmlentities($value->job_name) . '</td> <td>' . 
-                                        htmlentities($value->job_address_number) . ' ' . 
-                                        htmlentities($value->job_address_street) . ',<br />' . 
-                                        htmlentities($value->job_address_city) . ',<br />' . 
-                                        htmlentities($value->job_address_postcode) . '</td> <td>' . 
+                                        echo '<td hidden><input type="hidden" name="job_id[]" value="' . htmlentities($value->job_id) . '"/></td> <td>' .
+                                        htmlentities($value->job_name) . '</td> <td>' .
+                                        htmlentities($value->job_address_number) . ' ' .
+                                        htmlentities($value->job_address_street) . ',<br />' .
+                                        htmlentities($value->job_address_city) . ',<br />' .
+                                        htmlentities($value->job_address_postcode) . '</td> <td>' .
                                         htmlentities($value->job_tel) . '</td> <td>' .
                                         htmlentities($value->job_date) . '</td> <td>' .
                                         htmlentities($value->job_time) . '</td>';

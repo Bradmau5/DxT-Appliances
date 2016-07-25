@@ -41,7 +41,7 @@ return array(
 	 */
 	'DEFAULT_CONTROLLER' => 'index',
 	'DEFAULT_ACTION' => 'index',
-	'TITLE' => 'DxT Appliances Jobs',
+	'TITLE' => 'Prtotpe SS Web',
 	/**
 	 * Configuration for: Database
 	 * DB_TYPE The used database type. Note that other types than "mysql" might break the db construction currently.
@@ -54,9 +54,9 @@ return array(
 	 */
 	'DB_TYPE' => 'mysql',
 	'DB_HOST' => 'localhost',
-	'DB_NAME' => 'c2DXT',
-	'DB_USER' => 'c2dxtuser',
-	'DB_PASS' => 'dxtaccess',
+	'DB_NAME' => 'c1jobs',
+	'DB_USER' => 'c1prtotpe',
+	'DB_PASS' => 'wrkURlR!30',
 	'DB_PORT' => '3306',
 	'DB_CHARSET' => 'utf8',
 	/**

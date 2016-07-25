@@ -5,7 +5,7 @@
                     <p>Copyright &copy; SS-Web 2013-2016</p>
                 </div>
                 <div class="col-lg-2 text-center">
-                    <p><a href="http://prtotpe-jobs.dxtappliances.co.uk">Job Login</a></p>
+                    <p><a href="http://prtotpe-jobs.ss-web.co.uk">Job Login</a></p>
                 </div>
                 <div class="col-lg-5 text-center">
                     <p>Website created & managed by <a href="http://ss-web.co.uk">SS-Web.co.uk</a></p>

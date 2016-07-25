@@ -53,6 +53,7 @@ return array(
 	 */
 	'DEFAULT_CONTROLLER' => 'index',
 	'DEFAULT_ACTION' => 'index',
+	'TITLE' => 'Prtotpe SS Web',
 	/**
 	 * Configuration for: Database
 	 * DB_TYPE The used database type. Note that other types than "mysql" might break the db construction currently.
