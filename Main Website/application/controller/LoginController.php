@@ -23,7 +23,7 @@ class LoginController extends Controller
     {
         // if user is logged in redirect to main-page, if not show the view
         if (LoginModel::isUserLoggedIn()) {
-            $this->View->render('login/showProfile');
+            Redirect::to('login/showProfile');
         } else {
             $this->View->render('login/index');
         }
@@ -41,8 +41,10 @@ class LoginController extends Controller
 
         // check login status: if true, then redirect user login/showProfile, if false, then to login form again
         if ($login_successful) {
+            Session::add('feedback_positive', 'Successfully logged in.');
             Redirect::to('login/showProfile');
         } else {
+            Session::add('feedback_negative', 'Failed to log in.');
             Redirect::to('login/index');
         }
     }
@@ -54,7 +56,7 @@ class LoginController extends Controller
     public function logout()
     {
         LoginModel::logout();
-        Redirect::home();
+        Redirect::to('index/index');
     }
 
     /**
@@ -67,7 +69,7 @@ class LoginController extends Controller
 
         // if login successful, redirect to dashboard/index ...
         if ($login_successful) {
-            Redirect::to('index/index');
+            Redirect::to('login/showProfile');
         } else {
             // if not, delete cookie (outdated? attack?) and route user to login form to prevent infinite login loops
             LoginModel::deleteCookie();
@@ -208,7 +210,7 @@ class LoginController extends Controller
     public function register()
     {
         if (LoginModel::isUserLoggedIn()) {
-            Redirect::home();
+            Redirect::to('login/showProfile');
         } else {
             $this->View->render('login/register');
         }

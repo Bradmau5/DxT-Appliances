@@ -17,6 +17,9 @@
       <div>Your email: <?= $this->user_email; ?></div>
 			<br />
 			<br />
+			<div><a href="<?php echo Config::get('URL'); ?>booking/startbooking">Create a new booking</a>.</div>
+			<br />
+			<br />
 			<?php
 				if($this->currentBooking){
 					echo '<a href="#">View Current Booking</a> <br />	<br />';

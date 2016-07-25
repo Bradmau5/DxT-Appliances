@@ -26,7 +26,7 @@ class BookingController extends Controller {
 
   public function createBooking(){
     $booking_successfull = BookingModel::createbooking(
-      Request::post('user_name'),
+      Session::get('user_name'),
       Request::post('postcode'),
       Request::post('door_number'),
       Request::post('description'),
@@ -43,7 +43,7 @@ class BookingController extends Controller {
   }
 
   public function showCancel(){
-    $this->View->render('booking/showCancel');
+    $this->View->render('booking/cancelbooking');
   }
 
   public function cancelBooking(){
