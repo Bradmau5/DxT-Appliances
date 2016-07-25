@@ -1,5 +1,7 @@
     <div class="container">
         <div class="row">
+          <!-- echo out the system feedback (error and success messages) -->
+          <?php $this->renderFeedbackMessages(); ?>
             <div class="box">
                 <div class="col-lg-12 text-center">
                     <h2 class="brand-before">

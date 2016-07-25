@@ -64,10 +64,10 @@ return array(
 	 * DB_CHARSET The charset, necessary for security reasons. Check Database.php class for more info.
 	 */
 	'DB_TYPE' => 'mysql',
-	'DB_HOST' => 'server.ss-web.co.uk',
-	'DB_NAME' => 'c2DXT_main',
-	'DB_USER' => 'c2dxt',
-	'DB_PASS' => 'dxtaccess',
+	'DB_HOST' => 'localhost',
+	'DB_NAME' => 'c1prtotpe',
+	'DB_USER' => 'c1prtotpe',
+	'DB_PASS' => 'wrkURlR!30',
 	'DB_PORT' => '3306',
 	'DB_CHARSET' => 'utf8',
 	/**
@@ -95,8 +95,8 @@ return array(
 	 */
 	'COOKIE_RUNTIME' => 1209600,
 	'COOKIE_PATH' => '/',
-    'COOKIE_DOMAIN' => "",
-    'COOKIE_SECURE' => false,
+    'COOKIE_DOMAIN' => "prtotpe.ss-web.co.uk",
+    'COOKIE_SECURE' => true,
     'COOKIE_HTTP' => true,
     'SESSION_RUNTIME' => 604800,
 	/**
@@ -109,9 +109,9 @@ return array(
 	'USE_GRAVATAR' => false,
 	'GRAVATAR_DEFAULT_IMAGESET' => 'mm',
 	'GRAVATAR_RATING' => 'pg',
-	'AVATAR_SIZE' => 44,
+	'AVATAR_SIZE' => 77,
 	'AVATAR_JPEG_QUALITY' => 85,
-	'AVATAR_DEFAULT_IMAGE' => 'default.jpg',
+	'AVATAR_DEFAULT_IMAGE' => 'logo.png',
     /**
      * Configuration for: Encryption Keys
      *
@@ -142,13 +142,13 @@ return array(
 	 * Configuration for: Email content data
 	 */
 	'EMAIL_PASSWORD_RESET_URL' => 'login/verifypasswordreset',
-	'EMAIL_PASSWORD_RESET_FROM_EMAIL' => 'no-reply@dxtappliances.co.uk',
-	'EMAIL_PASSWORD_RESET_FROM_NAME' => 'DxT Appliances',
-	'EMAIL_PASSWORD_RESET_SUBJECT' => 'Password reset for DxT Appliances',
+	'EMAIL_PASSWORD_RESET_FROM_EMAIL' => 'no-reply@prtotpe-ssweb.co.uk',
+	'EMAIL_PASSWORD_RESET_FROM_NAME' => 'Prtotpe SS-Web',
+	'EMAIL_PASSWORD_RESET_SUBJECT' => 'Password reset for Prtotpe SS-Web',
 	'EMAIL_PASSWORD_RESET_CONTENT' => 'Please click on this link to reset your password: ',
 	'EMAIL_VERIFICATION_URL' => 'login/verify',
-	'EMAIL_VERIFICATION_FROM_EMAIL' => 'no-reply@dxtappliances.co.uk',
-	'EMAIL_VERIFICATION_FROM_NAME' => 'DxT Appliances',
-	'EMAIL_VERIFICATION_SUBJECT' => 'Account activation for DxT Appliances',
+	'EMAIL_VERIFICATION_FROM_EMAIL' => 'no-reply@prtotpe-ssweb.co.uk',
+	'EMAIL_VERIFICATION_FROM_NAME' => 'Prtotpe SS-Web',
+	'EMAIL_VERIFICATION_SUBJECT' => 'Account activation for Prtotpe SS-Web',
 	'EMAIL_VERIFICATION_CONTENT' => 'Please click on this link to activate your account: ',
 );

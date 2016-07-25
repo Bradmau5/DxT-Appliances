@@ -14,6 +14,7 @@
 
     <!-- Custom CSS -->
     <link href="<?php echo Config::get('URL'); ?>css/business-casual.css" rel="stylesheet">
+    <link href="<?php echo Config::get('URL'); ?>css/style.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -36,8 +37,8 @@
             </div>
         </div>
     </div>-->
-    <div class="brand">DXT APPLIANCES</div>
-    <div class="address-bar">100 Mayeswood Road | Grove Park, London, SE12 9RU | 020 8857 5821</div>
+    <div class="brand">PRTOTPE SS-WEB</div>
+    <div class="address-bar">Ravensbury Road | Orpington, Kent, BR5 | 07712 234 134</div>
 
     <!-- Navigation -->
     <nav class="navbar navbar-default" role="navigation">
@@ -51,7 +52,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="index.html">DXT APPLIANCES</a>
+                <a class="navbar-brand" href="index.html">PRTOTPE SS-WEB</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -62,14 +63,24 @@
                     <li>
                         <a href="<?php echo Config::get('URL'); ?>index/services">Services</a>
                     </li>
-                    <li>   
-                        <a href="https://www.yell.com/biz/dxt-appliances-ltd-london-7238090/#reviews">Reviews</a>
+                    <li>
+                        <a href="#">Reviews</a>
                     <li>
                         <a href="<?php echo Config::get('URL'); ?>index/about">About</a>
                     </li>
                     <li>
                         <a href="<?php echo Config::get('URL'); ?>index/contact">Contact</a>
                     </li>
+                    <?php if(!Session::userIsLoggedIn()) { ?>
+                        <!-- for not logged in users -->
+                        <li <?php if (View::checkForActiveControllerAndAction($filename, "login/index")) { echo ' class="active" '; } ?> >
+                            <a href="<?php echo Config::get('URL'); ?>login/index">Login/Register</a>
+                        </li>
+                    <?php } else { ?>
+                        <li>
+                          <a href="<?php echo Config::get('URL'); ?>login/showProfile">Your Profile</a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
