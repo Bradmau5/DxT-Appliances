@@ -2,13 +2,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 text-center">
-                    <p>Copyright &copy; DxT Appliances 2013-2016</p>
+                    <p>Copyright &copy; SS-Web 2013-2016</p>
                 </div>
                 <div class="col-lg-2 text-center">
-                    <p><a href="http://jobs.dxtappliances.co.uk">Job Login</a></p>
+                    <p><a href="http://prtotpe-jobs.dxtappliances.co.uk">Job Login</a></p>
                 </div>
                 <div class="col-lg-5 text-center">
-                    <p>Website created by Bradley Scott - <a href="http://ss-web.co.uk">SS-Web.co.uk</a></p>
+                    <p>Website created & managed by <a href="http://ss-web.co.uk">SS-Web.co.uk</a></p>
                 </div>
             </div>
         </div>
@@ -35,8 +35,8 @@
 
             $(window).scroll(function () {
                 //if you hard code, then use console
-                //.log to determine when you want the 
-                //nav bar to stick.  
+                //.log to determine when you want the
+                //nav bar to stick.
                 console.log($(window).scrollTop())
                 if ($(window).scrollTop() > 0) {
                     $('#top_bar').addClass('topbar-fixed');

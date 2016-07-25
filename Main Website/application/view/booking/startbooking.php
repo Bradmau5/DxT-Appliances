@@ -46,7 +46,7 @@
 
       <br />
 
-      <input type="submit" value="Submit Job" />
+      <input type="submit" value="Submit Booking" />
     </form>
   </div>
 </div>

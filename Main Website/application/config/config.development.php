@@ -95,8 +95,8 @@ return array(
 	 */
 	'COOKIE_RUNTIME' => 1209600,
 	'COOKIE_PATH' => '/',
-    'COOKIE_DOMAIN' => "",
-    'COOKIE_SECURE' => false,
+    'COOKIE_DOMAIN' => "prtotpe.ss-web.co.uk",
+    'COOKIE_SECURE' => true,
     'COOKIE_HTTP' => true,
     'SESSION_RUNTIME' => 604800,
 	/**
@@ -142,13 +142,13 @@ return array(
 	 * Configuration for: Email content data
 	 */
 	'EMAIL_PASSWORD_RESET_URL' => 'login/verifypasswordreset',
-	'EMAIL_PASSWORD_RESET_FROM_EMAIL' => 'no-reply@dxtappliances.co.uk',
-	'EMAIL_PASSWORD_RESET_FROM_NAME' => 'DxT Appliances',
-	'EMAIL_PASSWORD_RESET_SUBJECT' => 'Password reset for DxT Appliances',
+	'EMAIL_PASSWORD_RESET_FROM_EMAIL' => 'no-reply@prtotpe-ssweb.co.uk',
+	'EMAIL_PASSWORD_RESET_FROM_NAME' => 'Prtotpe SS-Web',
+	'EMAIL_PASSWORD_RESET_SUBJECT' => 'Password reset for Prtotpe SS-Web',
 	'EMAIL_PASSWORD_RESET_CONTENT' => 'Please click on this link to reset your password: ',
 	'EMAIL_VERIFICATION_URL' => 'login/verify',
-	'EMAIL_VERIFICATION_FROM_EMAIL' => 'no-reply@dxtappliances.co.uk',
-	'EMAIL_VERIFICATION_FROM_NAME' => 'DxT Appliances',
-	'EMAIL_VERIFICATION_SUBJECT' => 'Account activation for DxT Appliances',
+	'EMAIL_VERIFICATION_FROM_EMAIL' => 'no-reply@prtotpe-ssweb.co.uk',
+	'EMAIL_VERIFICATION_FROM_NAME' => 'Prtotpe SS-Web',
+	'EMAIL_VERIFICATION_SUBJECT' => 'Account activation for Prtotpe SS-Web',
 	'EMAIL_VERIFICATION_CONTENT' => 'Please click on this link to activate your account: ',
 );
