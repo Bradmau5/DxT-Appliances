@@ -7,7 +7,7 @@
         <?php $this->renderFeedbackMessages(); ?>
 		<center>
 		    <p>
-		        <form method="post" action="<?php echo Config::get('URL');?>admin/addanitem">
+		        <form method="post" action="<?php echo Config::get('URL');?>admin/addtostock">
 		        	<label for="invent_input_itemid">Item Code: </label>
 		        	<input id="invent_input_itemid" type="text" name="item_code" required /><br />
 

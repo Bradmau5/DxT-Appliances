@@ -36,7 +36,12 @@ class UserAdminModel
 		$query = $database->prepare($sql);
 		$query->execute();
 
-		return $query->fetchAll();
+    if($query->rowCount() >= 1)
+    {
+      return $query->fetchAll();
+    }
+    Session::add('feedback_negative', 'No engineers available.');
+    return false;
 	}
 
   public static function updateUser($user_id, $user_account_type)

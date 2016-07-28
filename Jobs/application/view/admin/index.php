@@ -33,6 +33,7 @@
   		<?php
   			echo "<li><a href=" . Config::get('URL') . 'admin/moveitem/' . ">Move Stock</a></li>";
   			echo "<li><a href=" . Config::get('URL') . 'admin/viewstock/' . ">View all Stock</a></li>";
+        echo "<li><a href=" . Config::get('URL') . 'admin/stocklow/' . ">Low Stock</a></li>";
   			if (Session::get('user_account_type') == 3) {
   				echo "<li><a href=" . Config::get('URL') . 'admin/addstock/' . ">Add Stock</a></li>";
           echo "<li><a href=" . Config::get('URL') . 'admin/additem/' . ">Add Item</a></li>";

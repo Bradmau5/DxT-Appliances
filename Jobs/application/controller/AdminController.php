@@ -117,7 +117,7 @@ class AdminController extends Controller
   }
   public function viewstock()
   {
-    $this->View->render('admin/stock/viewallstock', array("loc" => StockModel::getAllStock()));
+    $this->View->render('admin/stock/viewallstock', array("invent" => StockModel::getAllStock()));
   }
   public function additem()
   {
@@ -139,9 +139,14 @@ class AdminController extends Controller
     StockModel::stockUpdate(Request::post('item_id'), Request::post('item_quant'));
     Redirect::to('admin');
   }
+  public function minusstock()
+  {
+    StockModel::minusStock(Request::post('item_id'), Request::post('item_quant'));
+    Redirect::to('admin');
+  }
   public function addtostock()
   {
-    StockModel::addItemToStock(Request::post('item_code'), Request::post('item_name'), Request::post('item_description'), Request::post('item_make'), Request::post('item_cost'), Request::post('item_resell'), Request::post('item_location'), Request::post('item_quant'));
+    StockModel::addItem(Request::post('item_code'), Request::post('item_name'), Request::post('item_description'), Request::post('item_make'), Request::post('item_cost'), Request::post('item_resell'), Request::post('item_location'), Request::post('item_quant'));
     Redirect::to('admin/stock/additem');
   }
   public function search()
@@ -153,6 +158,11 @@ class AdminController extends Controller
   public function removefromstock()
   {
     StockModel::removeFromStock(Request::post('item_code'));
+    Redirect::to('admin');
+  }
+  public function stocklow()
+  {
+    StockModel::lowStockEmail();
     Redirect::to('admin');
   }
 

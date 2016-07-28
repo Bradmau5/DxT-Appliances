@@ -7,17 +7,17 @@
         <?php $this->renderFeedbackMessages(); ?>
 		<center>
 			<p>
-				<?php if ($this->loc) { ?>
+				<?php if ($this->invent) { ?>
 					<form method="post" action="<?php echo Config::get('URL');?>admin/search">
-			        	<label for="invent_input_item_quantity">Search: </label>
+			    	<label for="invent_input_item_quantity">Search: </label>
 						<input id="invent_input_item_quantity" type="text" name="search_terms" required />
 
-			        	<input type="submit" value="Add Item to Inventory" />
-			        </form><br/>
+			    	<input type="submit" value="Add Item to Inventory" />
+			    </form><br/>
 				<?php }else{} ?>
 			</p>
 		    <p>
-		        <?php if ($this->loc) { ?>
+		        <?php if ($this->invent) { ?>
                 	<table style="width=100%" border="2px" border-style="solid" text-align="center">
                     	<thead>
                        		<tr>
@@ -25,10 +25,10 @@
                        		</tr>
                        	</thead>
                        	<tbody>
-                       		<?php foreach($this->loc as $key => $value) {
+                       		<?php foreach($this->invent as $key => $value) {
                            		echo '<tr>';
                            		echo '<td>' . htmlentities($value->item_code) . '</td> <td>' . htmlentities($value->item_name) . '</td> <td>' . htmlentities($value->item_description) . '</td> <td>' . htmlentities($value->item_make) . '</td> <td>' . htmlentities($value->item_cost) . '</td> <td>' . htmlentities($value->item_resell) . '</td>';
-                              echo '<td>' . htmlentities($value->v_assigned) . '</td>';
+                              echo '<td>' . htmlentities($value->item_location) . '</td>';
                               echo '<td>' . htmlentities($value->item_quant) . '</td>';
                             } ?>
                         </tbody>

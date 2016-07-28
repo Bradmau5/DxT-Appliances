@@ -29,19 +29,26 @@ class StockModel
     if($query->rowCount() >= 1)
     {
       $user_email = Session::get('user_email');
+      $bodymain = '<table><thead><th>Item Code</th><th>Item Name</th><th>Quantity Left</th></thead><tbody>';
+      $bodyend = '</tbody></table>';
 
-      $body = Config::get('EMAIL_STOCK_CONTENT')
-      . foreach($result as $val){
-        echo $val->item_code . ' - ' . $val->item_name . ' - ' . $val->item_quant . '<br />'
-      };
+      foreach($result as $val){
+         $bodycontent .= '<tr> <td>' . $val->item_code . '</td> <td>' . $val->item_name . '</td> <td>' . $val->item_quant . '</td> </tr>';
+       }
+
+      $body = Config::get('EMAIL_STOCK_CONTENT') . '<br /><br />' . $bodymain . $bodycontent . $bodyend;
+
 
       $mail = new Mail;
       $mail_sent = $mail->sendMail($user_email,
                                   Config::get('EMAIL_STOCK_FROM_EMAIL'),
                                   Config::get('EMAIL_STOCK_FROM_NAME'),
                                   Config::get('EMAIL_STOCK_SUBJECT'), $body);
+
+      Session::add('feedback_positive', 'Low stock email sent.');
       return true;
     }
+    Session::add('feedback_negative', 'All stock is above 2.');
     return false;
   }
 
@@ -92,8 +99,25 @@ class StockModel
   {
     $database = DatabaseFactory::getFactory()->getConnection();
 
-    $sql = "UPDATE inventory SET item_quant += :item_quant
-            WHERE item_id = :item_id";
+    $sql = "UPDATE inventory SET item_quant = item_quant + :item_quant WHERE item_id = :item_id";
+    $query = $database->prepare($sql);
+    $query->execute(array(':item_id' => $item_id, ':item_quant' => $item_quant));
+
+    if ($query->rowCount() == 1)
+    {
+      Session::add('feedback_positive', Text::get('FEEDBACK_ITEM_ADDED_TO_STOCK_SUCCESS'));
+      return true;
+    }
+
+    Session::add('feedback_negative', Text::get('FEEDBACK_ITEM_ADDED_TO_STOCK_FAILED'));
+    return false;
+  }
+
+  public static function minusStock($item_id, $item_quant)
+  {
+    $database = DatabaseFactory::getFactory()->getConnection();
+
+    $sql = "UPDATE inventory SET item_quant = item_quant - :item_quant WHERE item_id = :item_id";
     $query = $database->prepare($sql);
     $query->execute(array(':item_id' => $item_id, ':item_quant' => $item_quant));
 
