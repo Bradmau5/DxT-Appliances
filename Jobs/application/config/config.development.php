@@ -108,7 +108,7 @@ return array(
 	 */
 	'EMAIL_USED_MAILER' => 'phpmailer',
 	'EMAIL_USE_SMTP' => true,
-	'EMAIL_SMTP_HOST' => 'server.ss-web.co.uk',
+	'EMAIL_SMTP_HOST' => 'localhost',
 	'EMAIL_SMTP_AUTH' => true,
 	'EMAIL_SMTP_USERNAME' => 'jobs@dxtappliances.co.uk',
 	'EMAIL_SMTP_PASSWORD' => 'NXKaB5gOpko#w',
@@ -136,4 +136,8 @@ return array(
 	'EMAIL_JOB_ASSIGNED_FROM_NAME' => 'DxT Appliances Jobs',
 	'EMAIL_JOB_ASSIGNED_SUBJECT' => 'DxT Appliances: You have been given a Job!',
 	'EMAIL_JOB_ASSIGNED1' => 'You have been assigned a new job, please visit the job website to view your new job.',
+	'EMAIL_STOCK_FROM_EMAIL' => 'Stock-Control@prtotpe.ss-web.co.uk',
+	'EMAIL_STOCK_FROM_NAME' => 'PRTOTPE STOCK CONTROL',
+	'EMAIL_STOCK_SUBJECT' => 'Stock running low',
+	'EMAIL_STOCK_CONTENT' => 'The below stock is currently running low. Considering ordering more.',
 );

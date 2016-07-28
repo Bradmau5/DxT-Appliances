@@ -7,17 +7,17 @@
         <?php $this->renderFeedbackMessages(); ?>
 		<center>
 		    <p>
-		        <form method="post" action="<?php echo Config::get('URL');?>admin/stockupdate">
+		        <form method="post" action="<?php echo Config::get('URL');?>admin/stockUpdate">
 		        	<label for="invent_input_item">Select Item: </label>
-		        	<select name="item_code" required>
+		        	<select name="item_id" required>
 		        		<?php
-					        if($this->invent){           
+					        if($this->invent){
 					            foreach($this->invent as $key=>$value){
-					                echo '<option value="' . htmlentities($value->item_code) . '">' . htmlentities($value->item_name) . ' (' . htmlentities($value->item_code) . ')</option>';
+					                echo '<option value="' . htmlentities($value->item_id) . '">' . htmlentities($value->item_name) . ' (' . htmlentities($value->item_code) . ')</option>';
 					            }
 					        } else {}
 					    ?>
-		        	</select><br/>	
+		        	</select><br/>
 
 		        	<label for="invent_input_itemamount">Enter amount of stock: </label>
 		        	<input id="invent_input_itemamount" type="number" name="item_quant" required /><br />
