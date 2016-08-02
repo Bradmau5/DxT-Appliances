@@ -8,17 +8,15 @@
 		<center>
 			<p>
 				<?php if ($this->invent) { ?>
-					<form method="post" action="<?php echo Config::get('URL');?>admin/search">
 			    	<label for="invent_input_item_quantity">Search: </label>
 						<input id="invent_input_item_quantity" type="text" name="search_terms" required />
 
-			    	<input type="submit" value="Add Item to Inventory" />
-			    </form><br/>
+			    	<button onclick="myFunction()">Search</button><br/>
 				<?php }else{} ?>
 			</p>
 		    <p>
 		        <?php if ($this->invent) { ?>
-                	<table style="width=100%" border="2px" border-style="solid" text-align="center">
+                	<table style="width=100%" border="2px" border-style="solid" text-align="center" id="view_stock">
                     	<thead>
                        		<tr>
                        			<th>Item Code</th> <th>Item Name</th> <th>Item Description</th> <th>Item Make</th> <th>Item Cost</th> <th>Item Re-Sale</th> <th>Item Location</th> <th>Quantity Available</th>
@@ -30,6 +28,7 @@
                            		echo '<td>' . htmlentities($value->item_code) . '</td> <td>' . htmlentities($value->item_name) . '</td> <td>' . htmlentities($value->item_description) . '</td> <td>' . htmlentities($value->item_make) . '</td> <td>' . htmlentities($value->item_cost) . '</td> <td>' . htmlentities($value->item_resell) . '</td>';
                               echo '<td>' . htmlentities($value->item_location) . '</td>';
                               echo '<td>' . htmlentities($value->item_quant) . '</td>';
+															echo '</tr>';
                             } ?>
                         </tbody>
                     </table>
@@ -40,3 +39,11 @@
     </div>
     <?php endif; ?>
 </div>
+<script>
+function myFunction() {
+		var input = document.getElementById('invent_input_item_quantity').value;
+    var $rowsNo = $('#view_stock tbody tr').filter(function () {
+        return $.trim($('td:contains(' + input + ')'))
+    }).toggle();
+}
+</script>

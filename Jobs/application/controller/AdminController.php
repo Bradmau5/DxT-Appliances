@@ -87,6 +87,11 @@ class AdminController extends Controller
     JobModel::assignJobs(Request::post('job_id'), Request::post('job_for'));
     Redirect::to('admin');
   }
+  public function jobdelete()
+  {
+    JobModel::deleteJob(Request::post('job_id'));
+    Redirect::to('admin');
+  }
 
   /**
     * This is the stock functions which allows you to add, move, remove and view stock. Also allows you add now stock locations.
@@ -152,7 +157,7 @@ class AdminController extends Controller
   public function search()
   {
     StockModel::search(Request::post('search_terms'));
-    $this->View->render('admin/stock/viewallstock', array("loc" => StockModel::getAllStock()));
+    $this->View->render('admin/stock/viewallstock', array("invent" => StockModel::getAllStock()));
     #Redirect::to('admin/stock/viewstock', array("loc" => StockModel::getAllStock()));
   }
   public function removefromstock()

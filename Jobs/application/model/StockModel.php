@@ -10,7 +10,7 @@ class StockModel
 	{
 		$database = DatabaseFactory::getFactory()->getConnection();
 
-    $sql = "SELECT * FROM inventory";
+    $sql = "SELECT * FROM BDL_Stock";
     $query = $database->prepare($sql);
     $query->execute();
 
@@ -20,7 +20,7 @@ class StockModel
   public static function lowStockEmail(){
     $database = DatabaseFactory::getFactory()->getConnection();
 
-    $sql = "SELECT item_code, item_name, item_quant FROM inventory WHERE item_quant <= 2";
+    $sql = "SELECT Stock_Code, Stock_Name, Stock_Quantity FROM BDL_Stock WHERE Stock_Quantity <= 2";
     $query = $database->prepare($sql);
     $query->execute();
 
@@ -33,7 +33,7 @@ class StockModel
       $bodyend = '</tbody></table>';
 
       foreach($result as $val){
-         $bodycontent .= '<tr> <td>' . $val->item_code . '</td> <td>' . $val->item_name . '</td> <td>' . $val->item_quant . '</td> </tr>';
+         $bodycontent .= '<tr> <td>' . $val->Stock_Code . '</td> <td>' . $val->Stock_NAame . '</td> <td>' . $val->Stock_Quantity . '</td> </tr>';
        }
 
       $body = Config::get('EMAIL_STOCK_CONTENT') . '<br /><br />' . $bodymain . $bodycontent . $bodyend;
@@ -77,11 +77,12 @@ class StockModel
     return false;
   }
 
+  //Fix this function.
 	public static function stockMove($item_code, $item_quant_move, $item_name_move)
 	{
 		$database = DatabaseFactory::getFactory()->getConnection();
 
-		$sql = "UPDATE inventory SET item_quant += :item_quant WHERE item_code=:item_code LIMIT 1";
+		$sql = "UPDATE BDL_Stock SET item_quant += :item_quant WHERE item_code=:item_code LIMIT 1";
 		$query = $database->prepare($sql);
 		$result = $query->execute(array(':item_quant' => $item_quant, ':item_code' => $item_code));
 
@@ -99,7 +100,7 @@ class StockModel
   {
     $database = DatabaseFactory::getFactory()->getConnection();
 
-    $sql = "UPDATE inventory SET item_quant = item_quant + :item_quant WHERE item_id = :item_id";
+    $sql = "UPDATE BDL_Stock SET Stock_Quantity = Stock_Quantity + :item_quant WHERE Id = :item_id";
     $query = $database->prepare($sql);
     $query->execute(array(':item_id' => $item_id, ':item_quant' => $item_quant));
 
@@ -117,7 +118,7 @@ class StockModel
   {
     $database = DatabaseFactory::getFactory()->getConnection();
 
-    $sql = "UPDATE inventory SET item_quant = item_quant - :item_quant WHERE item_id = :item_id";
+    $sql = "UPDATE BDL_Stock SET Stock_Quantity = Stock_Quantity - :item_quant WHERE Id = :item_id";
     $query = $database->prepare($sql);
     $query->execute(array(':item_id' => $item_id, ':item_quant' => $item_quant));
 
@@ -135,7 +136,7 @@ class StockModel
   {
     $database = DatabaseFactory::getFactory()->getConnection();
 
-    $sql = "INSERT INTO inventory (item_code, item_name, item_description, item_make, item_cost, item_resell)
+    $sql = "INSERT INTO BDL_Stock (Stock_Code, Stock_Name, Stock_Description, Stock_Make, Stock_Cost, Stock_Resell)
       VALUES (:item_code, :item_name, :item_description, :item_make, :item_cost, :item_resell)";
     $query = $database->prepare($sql);
     $query->execute(array(':item_code' => $item_code,
@@ -159,7 +160,7 @@ class StockModel
   {
     $database = DatabaseFactory::getFactory()->getConnection();
 
-    $sql = "DELETE * FROM inventory WHERE item_code = :item_code";
+    $sql = "DELETE * FROM BDL_Stock WHERE Stock_Code = :item_code";
     $query = $database->prepare($sql);
     $query->execute(array(':item_code' => $item_code));
 
@@ -170,35 +171,6 @@ class StockModel
     }
 
     Session::add('feedback_negative', Text::get('FEEDBACK_ITEM_ADDED_TO_STOCK_FAILED'));
-    return false;
-  }
-
-  public static function search($search_terms){
-    $database = DatabaseFactory::getFactory()->getConnection();
-
-    $sql = "SELECT * FROM inventory WHERE item_code LIKE :search_terms OR item_name LIKE :search_terms ORDER BY item_name";
-    $query = $database->prepare($sql);
-    $query->execute(array(':search_terms' => '%' . $search_terms . '%'));
-
-    $result = $query->fetchAll();
-
-    if ($result)
-    {
-      echo '<table>';
-      echo '<thead>';
-      echo '<th>Item Code</th> <th>Item Name</th>';
-      echo '</thead>';
-      echo '<tbody>';
-      foreach ($result as $val) {
-        echo '<tr>';
-        echo '<td>' . $val->item_code . '</td> <td>' . $val->item_name . '</td>';
-        echo '</tr>';
-      }
-      echo '</tbody>';
-      echo '</table>';
-
-      return true;
-    }
     return false;
   }
 }
