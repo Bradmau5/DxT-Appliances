@@ -5,18 +5,18 @@
 	<div class="jobform">
 		<?php $this->renderFeedbackMessages(); ?>
 		<p>
-        <form method="post" action="<?php echo Config::get('URL');?>admin/create" style="width: 60%;">
+  <form method="post" action="<?php echo Config::get('URL');?>admin/create" style="width: 60%;">
 	<label for="login_input_jobaccount">Is this an account job? </label>
-        <select name="job_account">
-            <option  value="0">No</option>
-            <option value="1">Yes</option>
+  <select name="job_account">
+    <option  value="0">No</option>
+    <option value="1">Yes</option>
 	</select><br/>
 
 	<label for="login_input_jobaccountname">Account: </label>
 	<select name="job_account_name">
 	    <option value="None">None</option>
 	<?php
-		if($this->users){			
+		if($this->users){
 			foreach($this->users as $key=>$value){
 				echo '<option value="' . $value->user_name . '">' . $value->user_name . '</option>';
 			}
@@ -28,9 +28,9 @@
 
         <label for="login_input_jobaddressnumber">Address: </label>
         <input name="job_address_number" placeholder="House Number" type="number" /><br />
-    	<input class="postcode" name="postcode"  placeholder="Postcode" /><br />
-	<input name="custom_field"  placeholder="Street" /><br />
-    	<input name="address3"  placeholder="City" /><br />
+    		<input class="postcode" name="postcode"  placeholder="Postcode" /><br />
+				<input name="custom_field"  placeholder="Street" /><br />
+    		<input name="address3"  placeholder="City" /><br />
 
 	<label for="login_input_jobtel">Contact Number: </label>
         <input id="login_input_jobtel" type="text" name="job_tel" required /><br/>
@@ -50,7 +50,7 @@
 	    <option value="Fridge">Fridge</option>
 	    <option value="Freezer">Freezer</option>
 	    <option value="Fridge Freezer">Fridge Freezer</option>
-        </select><br/>        
+        </select><br/>
 
         <label for="login_input_jobfault">Fault: </label>
         <input id="login_input_jobfault" type="text" name="job_fault" required /><br/>

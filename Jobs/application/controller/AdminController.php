@@ -74,7 +74,8 @@ class AdminController extends Controller
 
   public function create()
   {
-    JobModel::createJob(Request::post('job_name'), Request::post('job_address_number'), Request::post('custom_field'), Request::post('address3'), Request::post('postcode'), Request::post('job_tel'), Request::post('job_fi'), Request::post('job_mt'), Request::post('job_fault'), Request::post('job_date'), Request::post('job_time'), Request::post('job_keys'), Request::post('job_account'), Request::post('job_account_name'));
+    $job_address = Request::post('job_address_number') . Request::post('custom_field') . Request::post('address3');
+    JobModel::createJob(Request::post('job_name'), $job_address, Request::post('postcode'), Request::post('job_tel'), Request::post('job_fi'), Request::post('job_mt'), Request::post('job_fault'), Request::post('job_date'), Request::post('job_time'), Request::post('job_keys'), Request::post('job_account'), Request::post('job_account_name'));
     Redirect::to('admin');
   }
   public function declinejob()

@@ -1,0 +1,13 @@
+Crimson - #DC143C
+DodgerBlue - #1E90FF
+Turquoise2 - #00E5EE
+LawnGreen - #7CFC00
+
+Gray20 - #333333
+Gray30 - #4D4D4D
+Gray40 - #666666
+Gray50 - #7F7F7F
+Gray60 - #999999
+Gray70 - #B3B3B3
+Gray85 - #D9D9D9
+White - #FFFFFF

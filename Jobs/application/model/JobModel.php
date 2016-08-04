@@ -173,7 +173,7 @@
                                       ':job_postcode' => $job_postcode,
                                       ':job_contactnumber' => $job_contactnumber));
 
-        if ($query->rowCount() == 1) {
+        if ($query->rowCount() == 1 && $customerQuery->rowCount() == 1) {
           Session::add('feedback_positive', Text::get('FEEDBACK_JOB_CREATED_SUCCESS'));
           return true;
         }

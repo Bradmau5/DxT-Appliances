@@ -1,0 +1,276 @@
+$radRed: #DC143C;
+$boltBlue: #1E90FF;
+$turboTurqoise: #00E5EE;
+$gearGreen: #7CFC00;
+
+$gray20: #333333;
+$gray30: #4D4D4D;
+$gray40: #666666;
+$gray50: #7F7F7F;
+$gray60: #999999;
+$gray70: #B3B3B3;
+$gray85: #D9D9D9;
+$white: #FFFFFF;
+
+$fontFamily: "Hind Siliguri", "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+
+body {
+    font-family: $fontFamily;
+    font-weight: 400;
+    font-size: 14px;
+    height: 100%;
+    background: $gray50;
+}
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+.logo {
+    width: 500px;
+    height: 258px;
+    background-image: url('logo.png');
+    background-repeat: no-repeat;
+    margin: auto;
+}
+.jobform form {
+    text-align: right;
+}
+.jobform form input{
+    width: 150px;
+    margin-bottom: 4px;
+}
+.jobform form label{
+    text-align: left;
+    display: inline-block;
+}
+.jobform form select{
+    width: 170px;
+    margin-bottom: 4px;
+    padding: 5px 5px;
+}
+.jobfor form a{
+    margin-bottom: 4px;
+}
+.container {
+    max-width: 960px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 30px 0 30px 0;
+    background: $gray60;
+}
+.container a {
+    color: $boltBlue;
+}
+.container table {
+    font-size: 11px;
+    margin-top: 20px;
+}
+.container table thead td {
+    background-color: $gray40;
+    padding: 4px 10px;
+}
+.container table tbody td {
+    background-color: $gray60;
+    padding: 4px 10px;
+}
+.container .box {
+    border-top: 1px solid $gray70;
+    padding-top: 10px;
+    margin-top: 30px;
+}
+.container input {
+    background-color: $gray60;
+    border: 0;
+    padding: 5px 10px;
+}
+.container input[type="submit"] {
+    background-color: $gray60;
+    cursor: pointer;
+}
+.container input[type="submit"]:hover {
+    background-color: $gray70;
+    color: #fff;
+}
+.container button {
+    background-color: $gray60;
+    border: 0;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.container button:hover {
+    background-color: $gray70;
+    color: #fff;
+}
+
+
+
+/* navigation dropdown menu */
+.navigation, .navigation-submenu {
+    display: inline-block;
+    list-style: none;
+    /* btw this is necessary to remove most browsers's "hidden" default <ul> intent */
+    margin: 0;
+    padding: 0;
+}
+/* TODO */
+.navigation {
+}
+.navigation.right {
+    float: right;
+}
+.navigation li {
+    float: left;
+    margin-right: 5px;
+}
+.navigation .navigation-submenu {
+    display: none;
+}
+.navigation li a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid $gray40;
+    background: $gray40;
+    color: $white;
+    float:none;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.navigation li:hover .navigation-submenu {
+    display: block;
+    position: absolute;
+    float: left;
+}
+.navigation li:hover li,
+.navigation li:hover a {
+    float: none;
+}
+.navigation li a:hover,
+.navigation li:hover li a:hover {
+    background: $white;
+    color: $gray30;
+}
+
+.navigation > li.active a {
+    background: $white;
+    color: $gray30;
+}
+.navigation > li.active li a {
+    background: $gray30;
+    color: $white;
+}
+
+/* overview */
+.overview-table img {
+    width: 40px;
+    height: 40px;
+}
+
+/* feedback boxes */
+.feedback {
+    padding: 30px;
+    margin-bottom: 10px;
+}
+.feedback.success {
+    color: $gearGreen;
+    background-color: $gray85;
+}
+.feedback.error {
+    color: $radRed;
+    background-color: $gray85;
+}
+.feedback.info {
+    color: $turboTurqoise;
+    background-color: $gray85;
+}
+
+.header_right_box {
+    float: right;
+}
+
+/* login screen */
+.login-page-box {
+    display: table;
+    width: 100%;
+}
+.login-page-box .table-wrapper {
+    display: table-row;
+}
+
+.login-box {
+    display: table-cell;
+    margin: 0;
+    color: $white;
+    background-color: $gray60;
+    padding: 20px 50px 45px 50px;
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.login-box h2 {
+    color: #252525;
+}
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    font-family: Arial, sans-serif;
+    color: $gray20;
+    background-color: $gray40;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 50%;
+    box-sizing: border-box; /* modern way to say width:100% without padding */
+    /*text-transform: uppercase;*/
+}
+.login-box input[type="submit"] {
+    color: $gray20;
+    background-color: transparent;
+    border: 2px solid $gray40;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 50%;
+    box-sizing: border-box; /* modern way to say width:100% without padding */
+    text-transform: uppercase;
+}
+.login-box input[type="submit"]:hover {
+    color: $white;
+    border-color: $gray60;
+    background-color: $gray60;
+}
+.login-box .remember-me-label {
+    display: block;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.login-box .link-forgot-my-password {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.login-box .link-forgot-my-password a {
+    color: $gray20;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+.login-box .link-forgot-my-password a:hover {
+    text-decoration: underline;
+}
+.login-box ::-webkit-input-placeholder { color: $white; opacity: 0.5; }
+.login-box ::-moz-placeholder { color: $white; opacity: 0.5; }
+.login-box :-ms-input-placeholder { color: $white; opacity: 0.5; }
+.login-box input:-moz-placeholder { color: $gray40; opacity: 0.5; }
+
+/* error page */
+.red-text {
+    color: $radRed;
+}
